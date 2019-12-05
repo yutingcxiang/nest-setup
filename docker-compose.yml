@@ -9,8 +9,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - '.:/home/node/app'
+      - 'server-node-modules:/home/node/app/node_modules'
     ports:
       - '3000:3000'
+    command: npm start
     depends_on:
       - database
 
@@ -21,4 +23,10 @@ services:
       - '1433:1433'
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Password1234!!
+      - SA_PASSWORD=Password123456
+    volumes:
+      - 'sqlvolume:/var/opt/mssql'
+
+volumes:
+  sqlvolume:
+  server-node-modules:
