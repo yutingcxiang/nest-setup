@@ -15,9 +15,9 @@ import { PhotoHttpModule } from './photo/photo-http.module';
       host: 'database',
       port: 1433,
       username: 'sa',
-      password: 'Password1234!!',
+      password: 'Password123456',
       database: 'test',
-      entities: [Photo],
+        entities: [Photo],
       migrations: [
         "src/migration/**/*.ts"
       ],
